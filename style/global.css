@@ -1,0 +1,46 @@
+input:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.font-default {
+    color: gray;
+}
+
+.font-red {
+    color: #FF7E9D !important;
+}
+
+.font-blue {
+    color: #00CDFF !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.margin-right-10px {
+    margin-right: 10px;
+}
+
+.none-active-class {
+    border-bottom: 1px solid #ddd;
+}
+
+.active-class {
+    border-bottom: 1px solid orangered;
+}

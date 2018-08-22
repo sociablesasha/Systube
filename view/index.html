@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../style/Systube.ico">
+    <title>Systube</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/topnav.css">
+    <link rel="stylesheet" href="../style/sidenav.css">
+    <link rel="stylesheet" href="../style/card.css">
+</head>
+
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="navbar-items navbar-sideNav cursor-pointer" id="openNavButton">
+            <i class="fas fa-bars margin-right-10px"></i>
+        </div>
+
+        <a class="navbar-items navbar-mainNav" href="./index.html">
+            <i class="fab fa-youtube margin-right-10px"></i>
+            <span class="font-weight-bold">Systube</span>
+        </a>
+    </nav>
+
+    <!-- sidenav -->
+    <nav id="sideNav" class="sidenav">
+        <div id="sideNavContent">
+            <a href="javascript:void(0)" class="closebtn"  id="closeNavButton">&times;</a>
+            <!-- login -->
+            <form class="sidenav-form" style="display: none;" id="LoginForm">
+                <div class="sidenav-title font-weight-bold">Log in</div>
+                <div class="sidenav-content">
+                    <div class="form-group row none-active-class">
+                        <label for="Email" class="items sidenav-labels col-form-label"><i class="fas fa-envelope margin-right-10px"></i></label>
+                        <input type="email" class="items sidenav-inputs form-control-plaintext" id="Login[email]" placeholder="Example@systube.com">
+                    </div>
+                    <div class="form-group row none-active-class">
+                        <label for="Password" class="items sidenav-labels col-form-label"><i class="fas fa-lock margin-right-10px"></i></label>
+                        <input type="password" class="items sidenav-inputs form-control-plaintext" id="Login[password]" placeholder="Password">
+                    </div>
+                </div>
+                <div class="sidenav-footer">
+                    <button type="button" class="sidenav-button cursor-pointer" id="LoginButton">Log in</button>
+                    <div class="sidenav-other font-weight-light">
+                        First time here?
+                        <a class="font-weight-bold cursor-pointer" style="color: lightblue;" onclick="GoForm('SignupForm')">Sign up</a>.
+                    </div>
+                </div>
+            </form>
+            <!-- signin -->
+            <form class="sidenav-form" style="display: none;" id="SignupForm">
+                <div class="sidenav-title font-weight-bold">New Account</div>
+                <div class="sidenav-content">
+                    <div class="form-group">
+                        <img class="sidenav-photoBrief" id="Signup[photoBrief]">
+                        <input type="file" id="Signup[photo]" accept=".jpg, .jpeg, .png" hidden>
+                    </div>
+                    <div class="form-group row none-active-class">
+                        <label for="Email" class="items sidenav-labels col-form-label"><i class="fas fa-envelope margin-right-10px"></i></label>
+                        <input type="email" class="items sidenav-inputs form-control-plaintext" id="Signup[email]" placeholder="Example@systube.com">
+                    </div>
+                    <div class="form-group row none-active-class">
+                        <label for="Password" class="items sidenav-labels col-form-label"><i class="fas fa-lock margin-right-10px"></i></label>
+                        <input type="password" class="items sidenav-inputs form-control-plaintext" id="Signup[password]" placeholder="Password">
+                    </div>
+                    <div class="form-group row none-active-class">
+                        <label for="Name" class="items sidenav-labels col-form-label"><i class="fas fa-user margin-right-10px"></i></label>
+                        <input type="text" class="items sidenav-inputs form-control-plaintext" id="Signup[name]" placeholder="Name">
+                    </div>
+                </div>
+                <div class="sidenav-footer">
+                    <button type="button" class="sidenav-button cursor-pointer" id="SignupButton">Sign up</button>
+                    <div class="sidenav-other font-weight-light">
+                        Not the first time here?
+                        <a class="font-weight-bold cursor-pointer" style="color: lightblue;" onclick="GoForm('LoginForm')">Log in</a> .
+                    </div>
+                </div>
+            </form>
+            <!-- profile -->
+            <div class="sidenav-form" style="display: none;" id="ProfileForm">
+                <div class="sidenav-title font-weight-bold">Profile</div>
+                <div class="sidenav-title sidenav-subtitle"> | <i class="fas fa-grin margin-right-10px font-red"></i></div>
+                <div class="sidenav-title sidenav-subtitle"> | <i class="fas fa-angry margin-right-10px font-blue"></i></div>
+                <div class="sidenav-content">
+                    <div class="form-group">
+                        <img class="sidenav-photoBrief" id="Profile[photoBrief]">
+                        <input type="file" id="Profile[photo]" accept=".jpg, .jpeg, .png" hidden>
+                    </div>
+                    <div class="form-group row none-active-class">
+                        <label for="Email" class="items sidenav-labels col-form-label"><i class="fas fa-envelope margin-right-10px"></i></label>
+                        <input type="email" readonly class="items sidenav-inputs form-control-plaintext" id="Profile[email]" placeholder="Example@systube.com">
+                    </div>
+                    <div class="form-group row none-active-class">
+                        <label for="Password" class="items sidenav-labels col-form-label"><i class="fas fa-lock margin-right-10px"></i></label>
+                        <input type="password" readonly class="items sidenav-inputs form-control-plaintext" id="Profile[password]" placeholder="Password">
+                    </div>
+                    <div class="form-group row none-active-class">
+                        <label for="Name" class="items sidenav-labels col-form-label"><i class="fas fa-user margin-right-10px"></i></label>
+                        <input type="text" readonly class="items sidenav-inputs form-control-plaintext" id="Profile[name]" placeholder="Name">
+                    </div>
+                </div>
+                <div class="sidenav-footer">
+                    <button class="sidenav-button cursor-pointer" onclick="GoForm('LogoutForm')">Log out</button>
+                    <div class="sidenav-other font-weight-light">
+                        Thanks! Contact me
+                        <a class="font-weight-bold cursor-pointer" style="color: lightblue;">sociablesasha@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div class="container-fruid">
+        <div class="content">
+            <div class="card-columns">
+                <div class="card" id="cardForm">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="embed-responsive-item">
+                            <div class="embed-youtube-div embed-youtube-photo" id="YoutubePhoto">
+                                <button class="embed-youtube-button cursor-pointer" data-toggle="modal" data-target="#YoutubePop"></button>
+                                <input type="text" id="Card[link]" hidden>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <input class="font-weight-bold card-title font-default" id="Card[title]" placeholder="제목을 입력해주세요.">
+                        <div class="font-weight-light card-content font-default" id="Date"></div>
+                    </div>
+                    <div class="card-devider"></div>
+                    <div>
+                        <button class="font-weight-light card-buttons card-buttons-like cursor-pointer font-default" id="CardButton">
+                            <i class="fas fa-pencil-alt margin-right-10px"></i>작성하기
+                        </button>
+                        <button class="font-weight-light card-buttons card-buttons-dislike cursor-pointer font-default" id="CardCancelButton">
+                            <i class="fas fa-eraser margin-right-10px"></i>취소하기
+                        </button>
+                    </div>
+                </div>
+                <div class="card" id="cardDummy" style="display: none;">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <div class="font-weight-bold card-title font-default"></div>
+                        <div class="font-weight-light card-content font-default"></div>
+                    </div>
+                    <div class="card-devider"></div>
+                    <div>
+                        <button class="font-weight-light card-buttons card-buttons-like cursor-pointer font-default" id="cardLike">
+                            <i class="fas fa-grin margin-right-10px"></i>좋아요<span class="card-buttons-count"></span>
+                        </button>
+                        <button class="font-weight-light card-buttons card-buttons-dislike cursor-pointer font-default" id="cardDislike">
+                            <i class="fas fa-angry margin-right-10px"></i>싫어요<span class="card-buttons-count"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal fade" id="YoutubePop">
+        <div class="modal-dialog" style="display: flex; top: 25%;">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="ModalYoutube" class="cursor-pointer" style="width: 100%; height: auto;" src="https://static.highsnobiety.com/wp-content/uploads/2017/10/19172718/play-youtube-background-phone-01.gif">
+                    <div>
+                        <input type="url" class="form-control-plaintext modal-link" id="ModalLink" placeholder="https://www.youtube.com/watch?">
+                        <div class="modal-confirm"><i class="fas fa-check cursor-pointer" id="ModalConfirm"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Custom -->
+    <script src="../javascript/global.js "></script>
+    <script src="../javascript/login.js "></script>
+    <script src="../javascript/signup.js "></script>
+    <script src="../javascript/profile.js "></script>
+    <script src="../javascript/card.js "></script>
+</body>
+
+</html>
