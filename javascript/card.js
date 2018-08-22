@@ -50,11 +50,13 @@ function cardScroll(wanted) {
     }
 }
 
-$(document).ready(getCards());
+$(document).ready(
+    setTimeout(function () { getCards(); }, 0)
+);
 
 $(window).scroll(function () {
     if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-        cardScroll(9);
+        setTimeout(function () { cardScroll(9); }, 0)
     }
 });
 

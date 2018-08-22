@@ -32,6 +32,14 @@
 
 * Infinite scroll
 
+> ### Performance Issue.
+> It was too slow to load many YouTube videos.
+> ### Solution
+> 1. In Youtube Option : https://www.youtube.com/embed/{code}?controls=2
+> 2. In Logic : Paging and Infinite scroll
+> 3. In Code : Use setTimeout() to take the task to the queue.
+> ### Result
+> 6s -> 1.7s
 
 ## JWT, AJAX, LocalStorage
 
