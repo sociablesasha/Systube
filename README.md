@@ -1,37 +1,21 @@
 # **REST API** with JWT, AJAX, JQuery
-
 ## Systube
-
 ### Purpose
-
 1. Using JWT on the client.
-
 2. ... AJAX.
-
 3. ... JQuery.
-
 4. ... Bootstrap.
-
 5. ... Fontawesome.
-
 6. ... Youtube Embed.
-
 7. ... Responsive Design.
 
 ### Technical Stack
-
 * JWT
-
 * AJAX
-
 * JQuery
-
 * Bootstrap
-
 * Fontawesome
-
 * Infinite scroll
-
 > ### Performance Issue.
 > It was too slow to load many YouTube videos.
 > ### Solution
@@ -41,12 +25,10 @@
 > ### Result
 > 6s -> 1.7s
 
+
 ## JWT, AJAX, LocalStorage
-
 ### Sign Up
-
 Register your account.
-
 ```javascript
 $.ajax({
     type: "POST",
@@ -63,9 +45,7 @@ $.ajax({
 ```
 
 ### Log In
-
 Log In to your account.
-
 ```javascript
 $.ajax({
     type: "POST",
@@ -83,9 +63,7 @@ $.ajax({
 ```
 
 ### Profile
-
 Get your account.
-
 ```javascript
 $.ajax({
     type: "GET",
@@ -100,9 +78,7 @@ $.ajax({
 ```
 
 ### Card List
-
 Parse JSON and Make Cards.
-
 ```javascript
 $.ajax({
     type: "GET",
@@ -118,9 +94,7 @@ $.ajax({
 ```
 
 ### Card Write
-
 Like or DisLike Event
-
 ```javascript
 $.ajax({
     type: "POST",
@@ -138,9 +112,7 @@ $.ajax({
 ```
 
 ### Like or DisLike
-
 Like or DisLike Event
-
 ```javascript
 $.ajax({
     type: "POST",
@@ -159,7 +131,6 @@ $.ajax({
 
 
 ## Photo
-
 ### Mobile - List
 <img width="1680" alt="2018-08-22 3 42 10" src="https://user-images.githubusercontent.com/31611484/44447306-8d07d600-a622-11e8-9551-127191d26243.png">
 
@@ -200,9 +171,7 @@ $.ajax({
 <img width="1680" alt="2018-08-22 3 41 19" src="https://user-images.githubusercontent.com/31611484/44447303-8d07d600-a622-11e8-98b2-e63a6101ac3b.png">
 
 
-
 ## Histories
-
     2018.08.15. Design
     2018.08.16. Top-Nav, Side-Nav, Youtube-Modal, File-Input-Snipper.
     2018.08.17. AJAX(Log-In, Sign-Up, Profile) with JWT.
